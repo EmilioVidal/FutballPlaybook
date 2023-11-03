@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Instances/Ball.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 45.0444
+
+[node name="Ball" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 3.0
+default_color = Color( 1, 0, 0, 0.52549 )
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ball" type="KinematicBody2D" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="Spritesheet" type="Sprite" parent="Ball"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 3 )
+hframes = 5
+vframes = 4
+frame = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource( 3 )
+
+[node name="Inicio" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inicio"]
+shape = SubResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="Inicio"]
+points = PoolVector2Array( 0, -24, -6, -23, -12, -21, -17, -17, -21, -12, -23, -6, -24, 0, -23, 6, -21, 12, -17, 17, -12, 21, -7, 23, 0, 24, 6, 23, 12, 21, 17, 17, 21, 12, 23, 6, 24, 0, 23, -6, 21, -12, 17, -17, 12, -21, 6, -23, 0, -24 )
+width = 2.4
+default_color = Color( 0.839216, 0.2, 0.2, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Final" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
+shape = SubResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="Final"]
+points = PoolVector2Array( 0, -45, -12, -43, -23, -39, -32, -31, -39, -22, -44, -12, -45, 0, -44, 12, -39, 23, -32, 32, -23, 39, -11, 44, 0, 45, 12, 44, 23, 39, 32, 32, 39, 23, 43, 12, 45, 0, 44, -12, 39, -23, 32, -32, 23, -39, 12, -44, -1, -45 )
+width = 2.4
+default_color = Color( 0.839216, 0.2, 0.2, 1 )
+begin_cap_mode = 2
+end_cap_mode = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="body_entered" from="Inicio" to="." method="_on_Inicio_body_entered"]
+[connection signal="body_entered" from="Final" to="." method="_on_Final_body_entered"]
+[connection signal="body_exited" from="Final" to="." method="_on_Final_body_exited"]

@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/CanchaSteelers.jpg" type="Texture" id=1]
+[ext_resource path="res://Instances/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Botones/Botón ver jugada.png" type="Texture" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Instances/Dibujo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Botones/Botón guardar.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Botones/BackButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Botones/Botón playbook.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 3
+outline_color = Color( 1, 0.843137, 0, 1 )
+extra_spacing_top = -5
+extra_spacing_bottom = 20
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color( 0.184314, 0.192157, 0.552941, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Main" type="Node"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="CanchaSteelers" type="Sprite" parent="."]
+position = Vector2( 512, 250 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="YSort" type="YSort" parent="."]
+pause_mode = 1
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 439, 142 )
+
+[node name="Player2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 439, 78 )
+
+[node name="Player3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 187 )
+
+[node name="Player4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 229 )
+
+[node name="Player5" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 274 )
+
+[node name="Player6" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 322 )
+
+[node name="Player8" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 372 )
+
+[node name="Player9" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 385, 228 )
+
+[node name="Player10" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 342, 229 )
+
+[node name="Player11" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 299, 229 )
+
+[node name="Player7" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 438, 417 )
+
+[node name="Player12" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 586, 142 )
+type = true
+Acction = 2
+
+[node name="Player13" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 586, 187 )
+type = true
+Acction = 2
+
+[node name="Player14" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 586, 274 )
+type = true
+Acction = 2
+
+[node name="Player15" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 586, 322 )
+type = true
+Acction = 2
+
+[node name="Player16" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 647, 164 )
+type = true
+Acction = 2
+
+[node name="Player17" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 647, 301 )
+type = true
+Acction = 2
+
+[node name="Player18" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 687, 237 )
+type = true
+Acction = 2
+
+[node name="Player19" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 687, 78 )
+type = true
+Acction = 2
+
+[node name="Player20" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 698, 417 )
+type = true
+Acction = 2
+
+[node name="Player21" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 773, 138 )
+type = true
+Acction = 2
+
+[node name="Player22" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 773, 337 )
+type = true
+Acction = 2
+
+[node name="VerJugada" type="TextureButton" parent="."]
+margin_left = 653.0
+margin_top = 483.0
+margin_right = 878.0
+margin_bottom = 549.0
+texture_normal = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+color = Color( 0.384314, 0.788235, 0.945098, 0.537255 )
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Balon" type="Button" parent="."]
+margin_left = 326.0
+margin_top = 483.0
+margin_right = 477.0
+margin_bottom = 503.0
+rect_scale = Vector2( 2, 2 )
+text = "Agregar Pelota"
+
+[node name="Dibujo" parent="." instance=ExtResource( 5 )]
+
+[node name="Reiniciar" type="Button" parent="."]
+margin_left = 698.0
+margin_top = 549.0
+margin_right = 765.0
+margin_bottom = 569.0
+rect_scale = Vector2( 2, 2 )
+text = "Reiniciar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guardar" type="TextureButton" parent="."]
+margin_left = 862.0
+margin_top = 550.0
+margin_right = 1172.0
+margin_bottom = 634.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+
+[node name="Jugadas" type="ItemList" parent="."]
+visible = false
+margin_left = 64.0
+margin_top = 48.0
+margin_right = 960.0
+margin_bottom = 459.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/hseparation = 50
+custom_fonts/font = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_columns = 4
+same_column_width = true
+fixed_column_width = 225
+icon_mode = 0
+icon_scale = 0.18
+
+[node name="Go_back_button" type="TextureButton" parent="Jugadas"]
+margin_left = 846.0
+margin_top = 9.0
+margin_right = 1590.0
+margin_bottom = 724.0
+rect_scale = Vector2( 0.05, 0.05 )
+texture_normal = ExtResource( 7 )
+
+[node name="VerJugadas" type="TextureButton" parent="."]
+margin_left = 853.0
+margin_top = 18.0
+margin_right = 1078.0
+margin_bottom = 84.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 10 )
+
+[node name="TextEdit" type="LineEdit" parent="."]
+visible = false
+margin_left = 342.0
+margin_top = 10.0
+margin_right = 614.0
+margin_bottom = 37.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Nombre"
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+margin_right = 262.0
+margin_bottom = 131.0
+items = [ "Item 0", ExtResource( 9 ), false ]
+
+[connection signal="pressed" from="VerJugada" to="." method="_on_VerJugada_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="Balon" to="." method="_on_Balon_pressed"]
+[connection signal="pressed" from="Reiniciar" to="." method="_on_Reiniciar_pressed"]
+[connection signal="pressed" from="Guardar" to="." method="_on_Guardar_pressed"]
+[connection signal="item_selected" from="Jugadas" to="." method="_on_Jugadas_item_selected"]
+[connection signal="pressed" from="Jugadas/Go_back_button" to="." method="_on_Go_back_button_pressed"]
+[connection signal="pressed" from="VerJugadas" to="." method="_on_VerJugadas_pressed"]
+[connection signal="text_entered" from="TextEdit" to="." method="_on_TextEdit_text_entered"]
