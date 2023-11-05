@@ -1,4 +1,4 @@
-# FutballPlaybook
+# FootballPlaybook
 I worked with a team of students from CIBRUC, A.C. on a community service project to create a football playbook video game simulation using the GODOT ENGINE. Our goal was to help football coaches explain game tactics to their players in an interactive and engaging way.
 
 ## Screanshots
